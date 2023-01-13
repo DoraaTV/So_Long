@@ -6,7 +6,7 @@
 #    By: thrio <thrio@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 11:59:39 by thrio             #+#    #+#              #
-#    Updated: 2023/01/06 12:18:54 by thrio            ###   ########.fr        #
+#    Updated: 2023/01/13 12:14:09 by thrio            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 #LIBFTA             =    $(LIBFT)libft.a
 
-SRCS            =   main.c
+SRCS            =   main.c get_next_line.c get_next_line_utils.c
 
 OBJS            =    $(SRCS:.c=.o)
 
