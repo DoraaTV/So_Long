@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:57:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/13 17:46:41 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/13 17:53:09 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int key_event(int button, t_program *param)
 			j = 0;
 			while (j <= param->size)
 			{
-				if (param->map[i][j] == 'P' && param->map[i - 1][j] != '1')
+				if (param->map[i][j] == 'P' && param->map[i - 1][j] != '1' && param->map[i - 1][j] != 'E')
 				{
 					param->map[i - 1][j] = 'P';
 					param->map[i][j] = '0';
@@ -116,7 +116,7 @@ int key_event(int button, t_program *param)
 			j = 0;
 			while (j <= param->size)
 			{
-				if (param->map[i][j] == 'P' && param->map[i][j + 1] != '1')
+				if (param->map[i][j] == 'P' && param->map[i][j + 1] != '1' && param->map[i][j + 1] != 'E')
 				{
 					param->map[i][j + 1] = 'P';
 					param->map[i][j] = '0';
@@ -137,7 +137,7 @@ int key_event(int button, t_program *param)
 			j = 0;
 			while (j <= param->size)
 			{
-				if (param->map[i][j] == 'P' && param->map[i][j - 1] != '1')
+				if (param->map[i][j] == 'P' && param->map[i][j - 1] != '1' && param->map[i][j - 1] != 'E')
 				{
 					param->map[i][j - 1] = 'P';
 					param->map[i][j] = '0';
@@ -158,7 +158,7 @@ int key_event(int button, t_program *param)
 			j = 0;
 			while (j <= param->size)
 			{
-				if (param->map[i][j] == 'P' && param->map[i + 1][j] != '1')
+				if (param->map[i][j] == 'P' && param->map[i + 1][j] != '1' && param->map[i + 1][j] != 'E')
 				{
 					param->map[i + 1][j] = 'P';
 					param->map[i][j] = '0';
