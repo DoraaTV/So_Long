@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/06 15:14:22 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/09 15:01:20 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,6 @@ typedef struct  s_program
     void *mlx;
     void *win;
     void *image;
+    int sizex;
+    int sizey;
 }               t_program;
