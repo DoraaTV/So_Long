@@ -6,7 +6,7 @@
 #    By: thrio <thrio@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 11:59:39 by thrio             #+#    #+#              #
-#    Updated: 2023/01/13 12:14:09 by thrio            ###   ########.fr        #
+#    Updated: 2023/01/14 14:10:57 by thrio            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 #LIBFTA             =    $(LIBFT)libft.a
 
-SRCS            =   main.c get_next_line.c get_next_line_utils.c
+SRCS            =   src/main.c src/moves.c src/get_next_line.c src/get_next_line_utils.c
 
 OBJS            =    $(SRCS:.c=.o)
 
@@ -30,9 +30,11 @@ all:            $(NAME)
 	$(CC) -Wall -Wextra -Werror -Iminilibx-linux -Imlx_linux -O3 -c $< -o $@
 
 $(NAME):        $(OBJS)
+				cd minilibx-linux;make;cd ..
 				$(CC) $(CFLAGS) $(OBJS) -Lminilibx-linux -lmlx_Linux -Lminilibx-linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
+				cd minilibx-linux;make clean;cd ..
 				$(RM) $(OBJS) 
 
 fclean:         clean
