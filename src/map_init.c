@@ -6,11 +6,24 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 16:46:08 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/14 20:26:07 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+#include "../minilibx-linux/mlx.h"
+
+void	set_image(t_program *param)
+{
+	int size;
+
+	size = 32;
+	param->image.Chest = mlx_xpm_file_to_image(param->mlx, "image/Chest.xpm", &size, &size);
+	param->image.Char = mlx_xpm_file_to_image(param->mlx, "image/Char.xpm", &size, &size);
+	param->image.Rock = mlx_xpm_file_to_image(param->mlx, "image/Rock.xpm", &size, &size);
+	param->image.Grass = mlx_xpm_file_to_image(param->mlx, "image/Grass.xpm", &size, &size);
+	param->image.House = mlx_xpm_file_to_image(param->mlx, "image/House.xpm", &size, &size);
+}
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

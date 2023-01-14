@@ -6,7 +6,7 @@
 #    By: thrio <thrio@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 11:59:39 by thrio             #+#    #+#              #
-#    Updated: 2023/01/14 15:43:39 by thrio            ###   ########.fr        #
+#    Updated: 2023/01/14 19:59:43 by thrio            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS            =    $(SRCS:.c=.o)
 
 CC              =    cc
 RM              =    rm -f
-CFLAGS          =    -Wall -Wextra -Werror -g3
+CFLAGS          =    -Wall -Wextra -Werror
 
 NAME            =    so_long
 

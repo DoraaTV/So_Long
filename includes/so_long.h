@@ -6,21 +6,33 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 15:41:22 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/14 20:38:32 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+typedef struct r_program
+{
+    void *Chest;
+    void *House;
+    void *Rock;
+    void *Grass;
+    void *Char;
+}               i_program;
 
 typedef struct  s_program
 {
     char **map;
     void *mlx;
     void *win;
-    void *image;
     int size;
     int sizex;
     int sizey;
     int startx;
     int starty;
+    i_program image;
 }               t_program;
 
 # ifndef BUFFER_SIZE
@@ -65,3 +77,6 @@ void	swapjmoins(t_program *param, int i, int j, int *buf);
 void	move_left(t_program *param);
 void	move_down(t_program *param);
 void    map_init(t_program *param, char **file);
+void	set_image(t_program *param);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 14:34:48 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 14:25:48 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/14 20:48:37 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	ft_putchar_int(char c)
 {
-	write(1, &c, 1);
+	if (!write(1, &c, 1))
+		return (0);
 	return (1);
 }
 
@@ -27,7 +28,8 @@ int	ft_putstr_int(char *s)
 		return (ft_putstr_int("(null)"));
 	while (s[i])
 	{
-		write(1, &s[i], 1);
+		if (!write(1, &s[i], 1))
+			return (i);
 		i++;
 	}
 	return (i);
