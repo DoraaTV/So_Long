@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:57:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:20:16 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 19:33:39 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,20 +91,23 @@ int	key_event(int button, t_program *param)
 
 int	main(int ac, char **av)
 {
-	t_program	test;
+	t_program	param;
 
 	if (ac != 2)
 		return (0);
-	test.nbline = 0;
-	test.nbrs.depcount = 0;
-	map_init(&test, av);
-	test.mlx = mlx_init();
-	if (!test.mlx)
+	param.nbline = 0;
+	param.nbrs.depcount = 0;
+	param.nbrs.ccount = 0;
+	param.nbrs.charnb = 0;
+	param.nbrs.exitnb = 0;
+	map_init(&param, av);
+	param.mlx = mlx_init();
+	if (!param.mlx)
 		exit(1);
-	set_image(&test);
-	test.win = mlx_new_window(test.mlx, test.startx, test.starty, "so_long");
-	mlx_key_hook(test.win, &key_event, &test);
-	mlx_hook(test.win, 17, 0, closer, &test);
-	put(&test);
-	mlx_loop(test.mlx);
+	set_image(&param);
+	param.win = mlx_new_window(param.mlx, param.startx, param.starty, "so_long");
+	mlx_hook(param.win, 2, 1L>>0, key_event, &param);
+	mlx_hook(param.win, 17, 0, closer, &param);
+	put(&param);
+	mlx_loop(param.mlx);
 }

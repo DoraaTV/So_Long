@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:23:07 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 19:34:19 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ typedef struct j_program
     int exitnb;
     int charnb;
     int depcount;
+    int ccount;
 }               e_program;
 
 typedef struct r_program
@@ -99,5 +100,6 @@ void whichchar(char c, int x, int y, t_program *test);
 void casefalse(char *map, int fd);
 void	not_rectangle(t_program *test);
 void	closererror(t_program *param);
+void	notenoughc(t_program *test);
 
 #endif
