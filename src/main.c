@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:57:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 20:46:04 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/15 18:27:02 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,16 @@ int	put(t_program *test)
 
 int	closer(t_program *test)
 {
+	int	i;
+
+	i = 0;
 	mlx_destroy_window(test->mlx, test->win);
+	while (test->map[i])
+	{
+		free(test->map[i]);	
+		i++;
+	}
+	free(test->map);
 	exit(0);
 	return (0);
 }
@@ -99,6 +108,7 @@ int	main(int ac, char **av)
 	if (ac != 2)
 		return (0);
 	test.mlx = mlx_init();
+	test.nbline = 0;
 	if (!test.mlx)
 		exit(1);
 	set_image(&test);

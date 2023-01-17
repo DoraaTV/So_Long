@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 20:26:07 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/15 18:37:43 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 void	fd_checker(int fd, char **file)
 {
 	if (fd <= 2)
-		exit(1);
+		fd_not_exist();
 	if (ft_strlen(file[1]) < 5)
-		exit(1);
+		file_name_not_good();
 	if (ft_strncmp(file[1] + (ft_strlen(file[1]) - 4), ".ber", 4) != 0)
-		exit(1);
+		no_ber();
 }
 
 void	map_init(t_program *param, char **file)
@@ -67,10 +67,14 @@ void	map_init(t_program *param, char **file)
 	fd_checker(fd, file);
 	map = get_next_line(fd);
 	param->map = malloc(sizeof(char *) * ft_strlen(map));
+	if (!param->map)
+		exit (1);
 	param->size = ft_strlen(map);
 	while (map)
 	{
 		param->map[++i] = malloc(sizeof(char) * param->size);
+		if (!param->map[i])
+			exit(1);
 		param->map[i] = map;
 		map = get_next_line(fd);
 	}
@@ -78,4 +82,6 @@ void	map_init(t_program *param, char **file)
 	param->starty = 0;
 	while (param->map[++j])
 		param->starty += 32;
+	param->nbline = j;
+	map_checker(param);
 }

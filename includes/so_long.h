@@ -6,12 +6,18 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 20:38:32 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/15 18:26:10 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+typedef struct j_program
+{
+    int exitnb;
+    int charnb;
+}               e_program;
 
 typedef struct r_program
 {
@@ -28,11 +34,11 @@ typedef struct  s_program
     void *mlx;
     void *win;
     int size;
-    int sizex;
-    int sizey;
+    int nbline;
     int startx;
     int starty;
     i_program image;
+    e_program nbrs;
 }               t_program;
 
 # ifndef BUFFER_SIZE
@@ -78,5 +84,11 @@ void	move_left(t_program *param);
 void	move_down(t_program *param);
 void    map_init(t_program *param, char **file);
 void	set_image(t_program *param);
+void fd_not_exist();
+void file_name_not_good();
+void no_ber();
+void map_checker(t_program *param);
+
+
 
 #endif

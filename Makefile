@@ -6,7 +6,7 @@
 #    By: thrio <thrio@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/06 11:59:39 by thrio             #+#    #+#              #
-#    Updated: 2023/01/14 19:59:43 by thrio            ###   ########.fr        #
+#    Updated: 2023/01/15 18:11:32 by thrio            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,13 +14,13 @@
 
 #LIBFTA             =    $(LIBFT)libft.a
 
-SRCS            =   src/main.c src/map_init.c src/swapers.c src/moves.c src/get_next_line.c src/get_next_line_utils.c src/ft_utils.c src/ft_printf.c
+SRCS            =   src/main.c src/map_checker.c src/fd_errors.c src/map_init.c src/swapers.c src/moves.c src/get_next_line.c src/get_next_line_utils.c src/ft_utils.c src/ft_printf.c
 
 OBJS            =    $(SRCS:.c=.o)
 
 CC              =    cc
 RM              =    rm -f
-CFLAGS          =    -Wall -Wextra -Werror
+CFLAGS          =    -Wall -Wextra -Werror -g3
 
 NAME            =    so_long
 
