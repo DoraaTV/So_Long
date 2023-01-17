@@ -6,23 +6,47 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/15 18:37:43 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 16:52:54 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include "../minilibx-linux/mlx.h"
 
-void	set_image(t_program *param)
+void	ft_freemap(t_program *param)
 {
-	int size;
+	int	i;
 
-	size = 32;
-	param->image.Chest = mlx_xpm_file_to_image(param->mlx, "image/Chest.xpm", &size, &size);
-	param->image.Char = mlx_xpm_file_to_image(param->mlx, "image/Char.xpm", &size, &size);
-	param->image.Rock = mlx_xpm_file_to_image(param->mlx, "image/Rock.xpm", &size, &size);
-	param->image.Grass = mlx_xpm_file_to_image(param->mlx, "image/Grass.xpm", &size, &size);
-	param->image.House = mlx_xpm_file_to_image(param->mlx, "image/House.xpm", &size, &size);
+	i = 0;
+	while (param->map[i])
+	{
+		free(param->map[i]);
+		i++;
+	}
+	free(param->map);
+	free(param->mlx);
+}
+
+void	set_image(t_program *p)
+{
+	int	s;
+
+	s = 32;
+	p->image.Chest = mlx_xpm_file_to_image(p->mlx, "image/Chest.xpm", &s, &s);
+	if (!p->image.Chest)
+		ft_freeone(p);
+	p->image.Char = mlx_xpm_file_to_image(p->mlx, "image/Char.xpm", &s, &s);
+	if (!p->image.Char)
+		ft_freetwo(p);
+	p->image.Rock = mlx_xpm_file_to_image(p->mlx, "image/Rock.xpm", &s, &s);
+	if (!p->image.Rock)
+		ft_freethree(p);
+	p->image.Grass = mlx_xpm_file_to_image(p->mlx, "image/Grass.xpm", &s, &s);
+	if (!p->image.Grass)
+		ft_freefour(p);
+	p->image.House = mlx_xpm_file_to_image(p->mlx, "image/House.xpm", &s, &s);
+	if (!p->image.House)
+		ft_freefive(p);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -58,30 +82,25 @@ void	map_init(t_program *param, char **file)
 {
 	int		fd;
 	int		i;
-	int		j;
 	char	*map;
 
 	i = -1;
-	j = -1;
 	fd = open(file[1], O_RDONLY);
 	fd_checker(fd, file);
 	map = get_next_line(fd);
-	param->map = malloc(sizeof(char *) * ft_strlen(map));
-	if (!param->map)
-		exit (1);
 	param->size = ft_strlen(map);
+	param->map = malloc(sizeof(char *) * param->size);
+	if (!param->map)
+		casefalse(map, fd);
 	while (map)
 	{
-		param->map[++i] = malloc(sizeof(char) * param->size);
-		if (!param->map[i])
-			exit(1);
-		param->map[i] = map;
+		param->map[++i] = map;
 		map = get_next_line(fd);
 	}
-	param->startx = 32 * param->size;
-	param->starty = 0;
-	while (param->map[++j])
-		param->starty += 32;
-	param->nbline = j;
+	free(map);
+	param->map[i + 1] = 0;
+	param->startx = 32 * (param->size - 1);
+	param->starty = 32 * i + 32;
+	param->nbline = i;
 	map_checker(param);
 }

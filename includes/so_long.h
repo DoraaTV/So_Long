@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/15 18:26:10 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 16:53:30 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ typedef struct j_program
 {
     int exitnb;
     int charnb;
+    int depcount;
 }               e_program;
 
 typedef struct r_program
@@ -42,7 +43,7 @@ typedef struct  s_program
 }               t_program;
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1000
 # endif
 
 # include <unistd.h>
@@ -63,7 +64,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
-int	closer(t_program *test);
+int	closer(t_program *param);
 void    move_up(t_program *param);
 int	is_finished(t_program *param);
 int	put(t_program *test);
@@ -83,12 +84,18 @@ void	swapjmoins(t_program *param, int i, int j, int *buf);
 void	move_left(t_program *param);
 void	move_down(t_program *param);
 void    map_init(t_program *param, char **file);
-void	set_image(t_program *param);
+void	set_image(t_program *p);
 void fd_not_exist();
 void file_name_not_good();
 void no_ber();
 void map_checker(t_program *param);
-
-
+void ft_freemap(t_program *param);
+void ft_freeone(t_program *param);
+void ft_freetwo(t_program *param);
+void ft_freethree(t_program *param);
+void ft_freefour(t_program *param);
+void ft_freefive(t_program *param);
+void whichchar(char c, int x, int y, t_program *test);
+void casefalse(char *map, int fd);
 
 #endif
