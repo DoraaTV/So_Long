@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:56:05 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:39:36 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 20:10:12 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	checknbrs(t_program *param)
 		too_much_exit(param);
 	else if (param->nbrs.ccount == 0)
 		notenoughc(param);
+	cornercheck(param);
 }
 
 void	map_checker(t_program *param)
