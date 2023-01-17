@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:57:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 16:43:43 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 19:20:16 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	closer(t_program *param)
 	mlx_destroy_window(param->mlx, param->win);
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);
+	free(param->mlx);
 	exit(0);
 	return (0);
 }

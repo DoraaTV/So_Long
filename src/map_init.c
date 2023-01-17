@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 16:52:54 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/17 19:19:33 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_freemap(t_program *param)
 		i++;
 	}
 	free(param->map);
-	free(param->mlx);
 }
 
 void	set_image(t_program *p)
