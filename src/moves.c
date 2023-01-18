@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:00:53 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 16:48:54 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 13:39:34 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	casewin(t_program *param)
 {
+	param->nbrs.depcount++;
 	ft_printf("You won with %d moves !", param->nbrs.depcount);
 	closer(param);
 }

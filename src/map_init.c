@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:19:33 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 16:44:07 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,4 +102,5 @@ void	map_init(t_program *param, char **file)
 	param->starty = 32 * i + 32;
 	param->nbline = i;
 	map_checker(param);
+	pathfinding(param);
 }

@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:56:05 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 20:10:12 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 14:05:28 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,12 @@ void	map_checker(t_program *param)
 			else if (param->map[i][j] == 'C')
 				param->nbrs.ccount++;
 		}
-		if ((i != param->nbline && j != param->size) || param->nbline == param->size - 2)
+		if ((i != param->nbline && j != param->size)
+			|| param->nbline == param->size - 2)
 			not_rectangle(param);
 		else if (i == param->nbline && j + 1 != param->size)
 			not_rectangle(param);
 	}
 	checknbrs(param);
+	pathfinding(param);
 }

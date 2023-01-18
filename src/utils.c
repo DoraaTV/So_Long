@@ -6,16 +6,30 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:49:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:38:19 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 16:31:06 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minilibx-linux/mlx.h"
 #include "../includes/so_long.h"
 
-void casefalse(char *map, int fd)
+void	string_put(t_program *test)
 {
-    while (map)
+	char	*s;
+	char	*nb;
+
+	nb = ft_itoa(test->nbrs.depcount);
+	s = malloc(sizeof(char) * 8);
+	s = "Moves :";
+	s = ft_strjoin(s, nb);
+	mlx_string_put(test->mlx, test->win, 15, 15, 0x0000FF00, s);
+	free(s);
+	free(nb);
+}
+
+void	casefalse(char *map, int fd)
+{
+	while (map)
 		map = get_next_line(fd);
 	free(map);
 	exit(1);

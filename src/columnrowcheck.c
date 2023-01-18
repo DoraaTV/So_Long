@@ -6,22 +6,24 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 20:03:08 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 20:40:02 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 12:21:55 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void lineerror(t_program *param)
+void	lineerror(t_program *param)
 {
-	ft_printf("Invalid map, a wall is missing on a line, map must be closed\n");
+	ft_printf("Invalid map, a wall is missing on a \
+line, map must be closed\n");
 	ft_freemap(param);
 	exit(1);
 }
 
-void columnerror(t_program *param)
+void	columnerror(t_program *param)
 {
-	ft_printf("Invalid map, a wall is missing on a column, map must be closed\n");
+	ft_printf("Invalid map, a wall is missing on a \
+column, map must be closed\n");
 	ft_freemap(param);
 	exit(1);
 }
@@ -29,7 +31,7 @@ void columnerror(t_program *param)
 void	columncheck(t_program *param)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i <= param->nbline)
 	{

@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:57:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:33:39 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 13:24:45 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	put(t_program *test)
 		while (test->map[j][n])
 		{
 			whichchar(test->map[j][n], x, y, test);
+			string_put(test);
 			n++;
 			x += 32;
 		}
@@ -105,9 +106,11 @@ int	main(int ac, char **av)
 	if (!param.mlx)
 		exit(1);
 	set_image(&param);
-	param.win = mlx_new_window(param.mlx, param.startx, param.starty, "so_long");
-	mlx_hook(param.win, 2, 1L>>0, key_event, &param);
+	param.win = mlx_new_window(param.mlx, \
+		param.startx, param.starty, "so_long");
+	mlx_hook(param.win, 2, 1L << 0, key_event, &param);
 	mlx_hook(param.win, 17, 0, closer, &param);
 	put(&param);
 	mlx_loop(param.mlx);
+	return (0);
 }
