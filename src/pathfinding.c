@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 19:25:23 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 16:33:14 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:22:07 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,14 @@ void	pathfinding(t_program *param)
 		while (param->map[i][++j])
 		{
 			if (param->map[i][j] == 'P')
+			{
+				firstcheck(map, i, j);
+				if (!is_validpathone(map))
+					ft_close(map, param);
+				ft_freepath(map);
+				map = makemapcopy(param, map);
 				startpath(map, i, j);
+			}
 		}
 	}
 	i = 0;

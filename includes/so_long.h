@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 19:29:32 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:22:26 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,8 @@ void	pathfinding(t_program *param);
 char	**ft_split(char const *s, char c);
 char	*ft_strdup(char *src);
 void	ft_helper(t_program *param, int i, int fd);
+void	firstcheck(char **map, int i, int j);
+int		is_validpathone(char **map);
+void	ft_freepath(char **map);
 
 #endif

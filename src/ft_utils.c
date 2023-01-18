@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 14:21:53 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/14 14:25:52 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:23:07 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,16 @@ int	ft_printxx(long long int nb, char c)
 	else if (c == 'X')
 		counter += ft_putnbr_base(nb, "0123456789ABCDEF");
 	return (counter);
+}
+
+void	ft_freepath(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+	{
+		free(map[i]);
+		i++;
+	}
 }
