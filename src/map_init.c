@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 19:05:08 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:14:52 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,5 @@ void	map_init(t_program *param, char **file)
 	free(line);
 	param->map = ft_split(store, '\n');
 	free(store);
-	param->startx = 32 * (param->size - 1);
-	param->starty = 32 * i;
-	param->nbline = i;
-	close(fd);
-	map_checker(param);
-	pathfinding(param);
+	ft_helper(param, i, fd);
 }
