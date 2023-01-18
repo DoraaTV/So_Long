@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 20:03:08 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 12:21:55 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:10:51 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	columncheck(t_program *param)
 	int	i;
 
 	i = 0;
-	while (i <= param->nbline)
+	while (i <= param->nbline - 1)
 	{
 		if (param->map[i][0] != '1')
 			columnerror(param);
@@ -52,7 +52,7 @@ void	linecheck(t_program *param)
 	{
 		if (param->map[0][i] != '1' && i != param->size - 1)
 			lineerror(param);
-		if (i != param->size - 1 && param->map[5][i] != '1')
+		if (i != param->size -1 && param->map[param->nbline - 1][i] != '1')
 			lineerror(param);
 		i++;
 	}

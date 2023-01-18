@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 16:44:07 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:05:08 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,26 +81,32 @@ void	map_init(t_program *param, char **file)
 {
 	int		fd;
 	int		i;
-	char	*map;
+	char	*line;
+	char	*buf;
+	char	*store;
 
-	i = -1;
+	i = 0;
 	fd = open(file[1], O_RDONLY);
 	fd_checker(fd, file);
-	map = get_next_line(fd);
-	param->size = ft_strlen(map);
-	param->map = malloc(sizeof(char *) * param->size);
-	if (!param->map)
-		casefalse(map, fd);
-	while (map)
+	line = get_next_line(fd);
+	store = ft_strdup("");
+	param->size = ft_strlen(line);
+	while (line)
 	{
-		param->map[++i] = map;
-		map = get_next_line(fd);
+		buf = store;
+		store = ft_strjoin(buf, line);
+		free(buf);
+		free(line);
+		line = get_next_line(fd);
+		i++;
 	}
-	free(map);
-	param->map[i + 1] = 0;
+	free(line);
+	param->map = ft_split(store, '\n');
+	free(store);
 	param->startx = 32 * (param->size - 1);
-	param->starty = 32 * i + 32;
+	param->starty = 32 * i;
 	param->nbline = i;
+	close(fd);
 	map_checker(param);
 	pathfinding(param);
 }

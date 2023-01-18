@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 16:37:28 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 18:54:57 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,6 @@ void	string_put(t_program *test);
 char	*ft_itoa(int n);
 void	pathfinding(t_program *param);
 char	**ft_split(char const *s, char c);
+char	*ft_strdup(char *src);
 
 #endif

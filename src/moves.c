@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 14:00:53 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 13:39:34 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:07:14 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	move_up(t_program *param)
 	while (param->map[++i] && buf == 0)
 	{
 		j = -1;
-		while (++j <= param->size && buf == 0)
+		while (++j <= param->size - 1 && buf == 0)
 		{
 			if (param->map[i][j] == 'P')
 			{
@@ -55,7 +55,7 @@ void	move_right(t_program *param)
 	while (param->map[++i] && buf == 0)
 	{
 		j = -1;
-		while (++j <= param->size && buf == 0)
+		while (++j <= param->size - 1 && buf == 0)
 		{
 			if (param->map[i][j] == 'P')
 			{
@@ -80,7 +80,7 @@ void	move_left(t_program *param)
 	while (param->map[++i] && buf == 0)
 	{
 		j = -1;
-		while (++j <= param->size)
+		while (++j <= param->size - 1)
 		{
 			if (param->map[i][j] == 'P')
 			{
@@ -105,7 +105,7 @@ void	move_down(t_program *param)
 	while (param->map[++i] && buf == 0)
 	{
 		j = -1;
-		while (++j <= param->size && buf == 0)
+		while (++j <= param->size - 1 && buf == 0)
 		{
 			if (param->map[i][j] == 'P')
 			{

@@ -6,12 +6,30 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:11 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 13:26:55 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 18:54:26 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include <stdio.h>
+
+char	*ft_strdup(char *src)
+{
+	char	*sortie;
+	int		size;
+	int		i;
+
+	i = 0;
+	size = ft_strlen(src);
+	sortie = (char *) malloc(sizeof(char) * (size + 1));
+	while (src[i])
+	{
+		sortie[i] = src[i];
+		i++;
+	}
+	sortie[i] = '\0';
+	return (sortie);
+}
 
 static int	sizer(long int n)
 {
