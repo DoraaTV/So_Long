@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 13:56:05 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 19:07:34 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:37:25 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,7 @@ void	map_checker(t_program *param)
 		j = -1;
 		while (param->map[i][++j])
 		{
-			if (param->map[i][j] == 'P')
-				param->nbrs.charnb++;
-			else if (param->map[i][j] == 'E')
-				param->nbrs.exitnb++;
-			else if (param->map[i][j] == 'C')
-				param->nbrs.ccount++;
+			ft_helpertwo(param, i, j);
 		}
 		if ((i != param->nbline && j + 1 != param->size)
 			|| param->nbline == param->size - 1)

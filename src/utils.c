@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:49:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 19:23:30 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:30:49 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,4 @@ void	whichchar(char c, int x, int y, t_program *test)
 		mlx_put_image_to_window(test->mlx, test->win, test->image.house, x, y);
 	else if (c == '0')
 		mlx_put_image_to_window(test->mlx, test->win, test->image.grass, x, y);
-	else if (c != '\n')
-		closererror(test);
 }

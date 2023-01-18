@@ -6,22 +6,12 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 13:39:11 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 19:14:23 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:34:26 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 #include <stdio.h>
-
-void	ft_helper(t_program *param, int i, int fd)
-{
-	param->startx = 32 * (param->size - 1);
-	param->starty = 32 * i;
-	param->nbline = i;
-	close(fd);
-	map_checker(param);
-	pathfinding(param);
-}
 
 char	*ft_strdup(char *src)
 {
