@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 11:57:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 13:24:45 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:24:27 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	put(t_program *test)
 int	closer(t_program *param)
 {
 	mlx_clear_window(param->mlx, param->win);
-	mlx_destroy_image(param->mlx, param->image.Chest);
-	mlx_destroy_image(param->mlx, param->image.Char);
-	mlx_destroy_image(param->mlx, param->image.Rock);
-	mlx_destroy_image(param->mlx, param->image.Grass);
-	mlx_destroy_image(param->mlx, param->image.House);
+	mlx_destroy_image(param->mlx, param->image.chest);
+	mlx_destroy_image(param->mlx, param->image.player);
+	mlx_destroy_image(param->mlx, param->image.rock);
+	mlx_destroy_image(param->mlx, param->image.grass);
+	mlx_destroy_image(param->mlx, param->image.house);
 	mlx_destroy_window(param->mlx, param->win);
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);

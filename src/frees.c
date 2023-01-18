@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 12:04:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/17 19:20:08 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:25:04 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_freeone(t_program *param)
 
 void	ft_freetwo(t_program *param)
 {
-	mlx_destroy_image(param->mlx, param->image.Chest);
+	mlx_destroy_image(param->mlx, param->image.chest);
 	ft_printf("The char xpm file is missing");
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);
@@ -34,8 +34,8 @@ void	ft_freetwo(t_program *param)
 
 void	ft_freethree(t_program *param)
 {
-	mlx_destroy_image(param->mlx, param->image.Chest);
-	mlx_destroy_image(param->mlx, param->image.Char);
+	mlx_destroy_image(param->mlx, param->image.chest);
+	mlx_destroy_image(param->mlx, param->image.player);
 	ft_printf("The Rock xpm file is missing");
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);
@@ -45,9 +45,9 @@ void	ft_freethree(t_program *param)
 
 void	ft_freefour(t_program *param)
 {
-	mlx_destroy_image(param->mlx, param->image.Chest);
-	mlx_destroy_image(param->mlx, param->image.Char);
-	mlx_destroy_image(param->mlx, param->image.Rock);
+	mlx_destroy_image(param->mlx, param->image.chest);
+	mlx_destroy_image(param->mlx, param->image.player);
+	mlx_destroy_image(param->mlx, param->image.rock);
 	ft_printf("The Grass xpm file is missing");
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);
@@ -57,10 +57,10 @@ void	ft_freefour(t_program *param)
 
 void	ft_freefive(t_program *param)
 {
-	mlx_destroy_image(param->mlx, param->image.Chest);
-	mlx_destroy_image(param->mlx, param->image.Char);
-	mlx_destroy_image(param->mlx, param->image.Rock);
-	mlx_destroy_image(param->mlx, param->image.Grass);
+	mlx_destroy_image(param->mlx, param->image.chest);
+	mlx_destroy_image(param->mlx, param->image.player);
+	mlx_destroy_image(param->mlx, param->image.rock);
+	mlx_destroy_image(param->mlx, param->image.grass);
 	ft_printf("The House xpm file is missing");
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);

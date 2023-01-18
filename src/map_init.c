@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 15:16:54 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 19:14:52 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:22:33 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,20 @@ void	set_image(t_program *p)
 	int	s;
 
 	s = 32;
-	p->image.Chest = mlx_xpm_file_to_image(p->mlx, "image/Chest.xpm", &s, &s);
-	if (!p->image.Chest)
+	p->image.chest = mlx_xpm_file_to_image(p->mlx, "image/Chest.xpm", &s, &s);
+	if (!p->image.chest)
 		ft_freeone(p);
-	p->image.Char = mlx_xpm_file_to_image(p->mlx, "image/Char.xpm", &s, &s);
-	if (!p->image.Char)
+	p->image.player = mlx_xpm_file_to_image(p->mlx, "image/Char.xpm", &s, &s);
+	if (!p->image.player)
 		ft_freetwo(p);
-	p->image.Rock = mlx_xpm_file_to_image(p->mlx, "image/Rock.xpm", &s, &s);
-	if (!p->image.Rock)
+	p->image.rock = mlx_xpm_file_to_image(p->mlx, "image/Rock.xpm", &s, &s);
+	if (!p->image.rock)
 		ft_freethree(p);
-	p->image.Grass = mlx_xpm_file_to_image(p->mlx, "image/Grass.xpm", &s, &s);
-	if (!p->image.Grass)
+	p->image.grass = mlx_xpm_file_to_image(p->mlx, "image/Grass.xpm", &s, &s);
+	if (!p->image.grass)
 		ft_freefour(p);
-	p->image.House = mlx_xpm_file_to_image(p->mlx, "image/House.xpm", &s, &s);
-	if (!p->image.House)
+	p->image.house = mlx_xpm_file_to_image(p->mlx, "image/House.xpm", &s, &s);
+	if (!p->image.house)
 		ft_freefive(p);
 }
 

@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 16:49:43 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 16:31:06 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 19:23:30 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ void	casefalse(char *map, int fd)
 void	closererror(t_program *param)
 {
 	mlx_clear_window(param->mlx, param->win);
-	mlx_destroy_image(param->mlx, param->image.Chest);
-	mlx_destroy_image(param->mlx, param->image.Char);
-	mlx_destroy_image(param->mlx, param->image.Rock);
-	mlx_destroy_image(param->mlx, param->image.Grass);
-	mlx_destroy_image(param->mlx, param->image.House);
+	mlx_destroy_image(param->mlx, param->image.chest);
+	mlx_destroy_image(param->mlx, param->image.player);
+	mlx_destroy_image(param->mlx, param->image.rock);
+	mlx_destroy_image(param->mlx, param->image.grass);
+	mlx_destroy_image(param->mlx, param->image.house);
 	mlx_destroy_window(param->mlx, param->win);
 	mlx_destroy_display(param->mlx);
 	ft_freemap(param);
@@ -61,15 +61,15 @@ void	notenoughc(t_program *test)
 void	whichchar(char c, int x, int y, t_program *test)
 {
 	if (c == '1')
-		mlx_put_image_to_window(test->mlx, test->win, test->image.Rock, x, y);
+		mlx_put_image_to_window(test->mlx, test->win, test->image.rock, x, y);
 	else if (c == 'P')
-		mlx_put_image_to_window(test->mlx, test->win, test->image.Char, x, y);
+		mlx_put_image_to_window(test->mlx, test->win, test->image.player, x, y);
 	else if (c == 'C')
-		mlx_put_image_to_window(test->mlx, test->win, test->image.Chest, x, y);
+		mlx_put_image_to_window(test->mlx, test->win, test->image.chest, x, y);
 	else if (c == 'E')
-		mlx_put_image_to_window(test->mlx, test->win, test->image.House, x, y);
+		mlx_put_image_to_window(test->mlx, test->win, test->image.house, x, y);
 	else if (c == '0')
-		mlx_put_image_to_window(test->mlx, test->win, test->image.Grass, x, y);
+		mlx_put_image_to_window(test->mlx, test->win, test->image.grass, x, y);
 	else if (c != '\n')
 		closererror(test);
 }
