@@ -6,7 +6,7 @@
 /*   By: thrio <thrio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 14:38:55 by thrio             #+#    #+#             */
-/*   Updated: 2023/01/18 20:37:08 by thrio            ###   ########.fr       */
+/*   Updated: 2023/01/18 20:40:12 by thrio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ void	firstcheck(char **map, int i, int j);
 int		is_validpathone(char **map);
 void	ft_freepath(char **map);
 void	unknownchar(t_program *test);
-void    ft_helpertwo(t_program *param, int i, int j);
+void	ft_helpertwo(t_program *param, int i, int j);
 
 #endif
